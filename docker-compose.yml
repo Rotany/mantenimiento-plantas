@@ -1,0 +1,10 @@
+services:
+  database:
+    image: 'postgres:15.1'
+    restart: unless-stopped
+    ports:
+      - "5555:5432"
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: nani
+      POSTGRES_DB: plantas
