@@ -1,3 +1,4 @@
+name: plantas
 services:
   database:
     image: 'postgres:15.1'
@@ -8,3 +9,7 @@ services:
       POSTGRES_PASSWORD: example
       POSTGRES_USER: nani
       POSTGRES_DB: plantas
+    volumes:
+      - plantas_data:/var/lib/postgresql/data
+volumes:
+  plantas_data:
