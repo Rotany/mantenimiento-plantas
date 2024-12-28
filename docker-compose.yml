@@ -11,5 +11,18 @@ services:
       POSTGRES_DB: plantas
     volumes:
       - plantas_data:/var/lib/postgresql/data
+  
+  api_plantas:
+    build: code/
+    depends_on:
+      - database
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./code/:/python-docker"
+    env_file:
+      - ./code/.env.docker
+    
+
 volumes:
   plantas_data:
